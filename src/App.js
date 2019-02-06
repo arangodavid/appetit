@@ -18,11 +18,14 @@ const business = {
 const businesses = [business, business, business, business, business, business];
 
 class App extends React.Component {
+  searchYelp(term, location, searchBy) {
+    console.log('Searching Yelp with ' + term, location, searchBy);
+  }
   render() {
     return (
       <div className="App">
       <h1>Appétit</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp}/>
         <BusinessList business={businesses}/>
       </div>
     );
